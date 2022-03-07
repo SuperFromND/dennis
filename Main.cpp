@@ -11,13 +11,13 @@ int width  = 640;
 int height = 480;
 
 bool init() {
-    // create window and renderer
-    window = SDL_CreateWindow("Dennis", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_RESIZABLE);
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-    
     // initialize SDL and randomize RNG seed
     SDL_Init(SDL_INIT_EVERYTHING);
     srand(time(NULL));
+    
+    // create window and renderer
+    window = SDL_CreateWindow("Dennis", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_RESIZABLE);
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
     return true;
 }
